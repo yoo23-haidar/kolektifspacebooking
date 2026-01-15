@@ -4,44 +4,44 @@ Kolektif Space adalah sistem pemesanan ruang meeting dan kantor berbasis web yan
 
 ## Tech Stack
 
-| Technology | Description |
-|------------|-------------|
-| **Laravel 11** | PHP Framework |
-| **MySQL** | Database |
-| **Blade** | Template Engine |
-| **Tailwind CSS** | Styling |
-| **Alpine.js** | JavaScript Framework |
-| **Vite** | Build Tool |
-| **Flatpickr** | Date Picker |
-| **SweetAlert2** | Alert/Popup Library |
+| Technology       | Description          |
+| ---------------- | -------------------- |
+| **Laravel 11**   | PHP Framework        |
+| **MySQL**        | Database             |
+| **Blade**        | Template Engine      |
+| **Tailwind CSS** | Styling              |
+| **Alpine.js**    | JavaScript Framework |
+| **Vite**         | Build Tool           |
+| **Flatpickr**    | Date Picker          |
+| **SweetAlert2**  | Alert/Popup Library  |
 
 ## Fitur Utama
 
 ### Untuk Pengunjung (Guest)
--  **Jelajahi Ruangan** - Lihat semua meeting room dan office space yang tersedia
--  **Booking Tanpa Login** - Pesan ruangan langsung tanpa perlu membuat akun
--  **Transfer Bank Manual** - Pembayaran via transfer dengan konfirmasi WhatsApp
--  **Jam Operasional** - Pembatasan booking hanya pada jam 09:00-22:00
--  **Notifikasi Error** - Popup peringatan untuk konflik jadwal atau waktu di luar operasional
+- 🔍 **Jelajahi Ruangan** - Lihat semua meeting room dan office space yang tersedia
+- 📅 **Booking Tanpa Login** - Pesan ruangan langsung tanpa perlu membuat akun
+- 💳 **Transfer Bank Manual** - Pembayaran via transfer dengan konfirmasi WhatsApp
+- ⏰ **Jam Operasional** - Pembatasan booking hanya pada jam 09:00-22:00
+- 🔔 **Notifikasi Error** - Popup peringatan untuk konflik jadwal atau waktu di luar operasional
 
 ### Untuk Admin
--  **Dashboard Overview** - Statistik revenue, occupancy, dan guest hari ini
--  **Kelola Booking** - Approve atau cancel booking dengan satu klik
--  **Toggle Space** - Aktifkan/nonaktifkan ruangan
--  **Filter Booking** - Filter berdasarkan status dan ruangan
--  **Auto-Cancel** - Pembatalan otomatis booking pending setelah 3 jam
+- 📊 **Dashboard Overview** - Statistik revenue, occupancy, dan guest hari ini
+- ✅ **Kelola Booking** - Approve atau cancel booking dengan satu klik
+- 🔄 **Toggle Space** - Aktifkan/nonaktifkan ruangan
+- 🔍 **Filter Booking** - Filter berdasarkan status dan ruangan
+- ⚡ **Auto-Cancel** - Pembatalan otomatis booking pending setelah 3 jam
 
 ## Prasyarat (Prerequisites)
 
 Pastikan software berikut sudah terinstal di komputer Anda:
 
-| Software | Versi Minimum | Link Download |
-|----------|---------------|---------------|
-| PHP | 8.2+ | [php.net](https://php.net) |
-| Composer | 2.0+ | [getcomposer.org](https://getcomposer.org) |
-| Node.js | 18+ | [nodejs.org](https://nodejs.org) |
-| MySQL | 8.0+ | [mysql.com](https://mysql.com) |
-| Git | 2.0+ | [git-scm.com](https://git-scm.com) |
+| Software | Versi Minimum | Link Download                              |
+| -------- | ------------- | ------------------------------------------ |
+| PHP      | 8.2+          | [php.net](https://php.net)                 |
+| Composer | 2.0+          | [getcomposer.org](https://getcomposer.org) |
+| Node.js  | 18+           | [nodejs.org](https://nodejs.org)           |
+| MySQL    | 8.0+          | [mysql.com](https://mysql.com)             |
+| Git      | 2.0+          | [git-scm.com](https://git-scm.com)         |
 
 > **Tip:** Gunakan [Laragon](https://laragon.org) (Windows) atau [Laravel Valet](https://laravel.com/docs/valet) (Mac) untuk setup yang lebih mudah.
 
@@ -49,21 +49,21 @@ Pastikan software berikut sudah terinstal di komputer Anda:
 
 ### Tools yang Dibutuhkan
 
-| Software | Fungsi | Link Download |
-|----------|--------|---------------|
-| **Laragon** | Local Server (PHP, MySQL, Apache) | [laragon.org](https://laragon.org/download/) |
-| **TablePlus** | Database GUI Manager | [tableplus.com](https://tableplus.com/) |
-| **Node.js** | JavaScript Runtime | [nodejs.org](https://nodejs.org) |
+| Software      | Fungsi                            | Link Download                                |
+| ------------- | --------------------------------- | -------------------------------------------- |
+| **Laragon**   | Local Server (PHP, MySQL, Apache) | [laragon.org](https://laragon.org/download/) |
+| **TablePlus** | Database GUI Manager              | [tableplus.com](https://tableplus.com/)      |
+| **Node.js**   | JavaScript Runtime                | [nodejs.org](https://nodejs.org)             |
 
 ### Step 1: Install & Setup Laragon
 
 1. Download dan install **Laragon Full** dari [laragon.org](https://laragon.org/download/)
 2. Buka Laragon → klik **Start All** (akan menjalankan Apache & MySQL)
 3. Laragon secara otomatis menyediakan:
-   - PHP 8.x
-   - MySQL 8.x
-   - Composer
-   - Git
+    - PHP 8.x
+    - MySQL 8.x
+    - Composer
+    - Git
 
 ### Step 2: Clone Project ke Laragon
 
@@ -79,10 +79,10 @@ cd kolektifspacebooking
 1. Buka **TablePlus**
 2. Klik **"Create a new connection"** → pilih **MySQL**
 3. Isi koneksi:
-   - **Host**: `127.0.0.1`
-   - **Port**: `3306`
-   - **User**: `root`
-   - **Password**: *(kosongkan)*
+    - **Host**: `127.0.0.1`
+    - **Port**: `3306`
+    - **User**: `root`
+    - **Password**: _(kosongkan)_
 4. Klik **Connect**
 5. Klik kanan di sidebar → **New Database** → Nama: `kolektifspace`
 
@@ -134,15 +134,16 @@ php artisan serve
 
 ### Step 8: Akses Aplikasi
 
-| Halaman | URL |
-|---------|-----|
-| Homepage | http://localhost:8000 atau http://kolektifspacebooking.test |
-| Explore Spaces | http://localhost:8000/explore |
-| Admin Panel | http://localhost:8000/admin |
+| Halaman        | URL                                                         |
+| -------------- | ----------------------------------------------------------- |
+| Homepage       | http://localhost:8000 atau http://kolektifspacebooking.test |
+| Explore Spaces | http://localhost:8000/explore                               |
+| Admin Panel    | http://localhost:8000/admin                                 |
 
 **Login Admin:**
-- Email: `admin@kolektif.com`
-- Password: `password`
+
+-   Email: `admin@kolektif.com`
+-   Password: `password`
 
 > **Tips Laragon:** Aktifkan "Pretty URL" di Laragon untuk akses via `http://kolektifspacebooking.test` tanpa perlu `php artisan serve`
 
@@ -212,45 +213,53 @@ php artisan serve
 
 ### 7. Akses Aplikasi
 
-| Halaman | URL |
-|---------|-----|
-| Homepage | http://localhost:8000 |
+| Halaman        | URL                           |
+| -------------- | ----------------------------- |
+| Homepage       | http://localhost:8000         |
 | Explore Spaces | http://localhost:8000/explore |
-| Admin Panel | http://localhost:8000/admin |
+| Admin Panel    | http://localhost:8000/admin   |
 
 **Login Admin:**
-- Email: `admin@kolektif.com`
-- Password: `password`
+
+-   Email: `admin@kolektif.com`
+-   Password: `password`
 
 ## Screenshots
 
 ### Homepage
+
 ![Homepage](screenshots/homepage.png)
-*Halaman utama dengan hero section dan search bar untuk mencari ruangan*
+_Halaman utama dengan hero section dan search bar untuk mencari ruangan_
 
 ### Explore Page
+
 ![Explore](screenshots/explore.png)
-*Daftar semua ruangan yang tersedia dengan filter berdasarkan tipe*
+_Daftar semua ruangan yang tersedia dengan filter berdasarkan tipe_
 
 ### Space Detail
+
 ![Space Detail](screenshots/space-detail.png)
-*Detail ruangan dengan informasi lengkap, harga, dan form booking*
+_Detail ruangan dengan informasi lengkap, harga, dan form booking_
 
 ### Booking Form
+
 ![Booking Form](screenshots/booking-form.png)
-*Form pemesanan dengan pilihan tanggal, waktu, dan durasi*
+_Form pemesanan dengan pilihan tanggal, waktu, dan durasi_
 
 ### Payment Page
+
 ![Payment](screenshots/payment.png)
-*Halaman pembayaran dengan instruksi transfer bank dan countdown timer*
+_Halaman pembayaran dengan instruksi transfer bank dan countdown timer_
 
 ### Admin Dashboard
+
 ![Admin Dashboard](screenshots/admin-dashboard.png)
-*Dashboard admin dengan statistik revenue, occupancy, dan incoming requests*
+_Dashboard admin dengan statistik revenue, occupancy, dan incoming requests_
 
 ### Admin Bookings
+
 ![Admin Bookings](screenshots/admin-bookings.png)
-*Daftar semua booking dengan filter status dan ruangan*
+_Daftar semua booking dengan filter status dan ruangan_
 
 ## Struktur Folder Penting
 
