@@ -15,14 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Admin User directly without factory
-        User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@kolektif.com',
-            'password' => bcrypt('password'),
-            'is_admin' => true,
-            'email_verified_at' => now(),
-        ]);
+        // Create Admin User (skip if already exists)
+        User::firstOrCreate(
+            ['email' => 'admin@kolektif.com'],
+            [
+                'name' => 'Admin User',
+                'password' => bcrypt('password'),
+                'is_admin' => true,
+                'email_verified_at' => now(),
+            ]
+        );
 
         $this->call(SpaceSeeder::class);
         $this->call(BookingSeeder::class);

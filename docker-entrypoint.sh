@@ -14,8 +14,8 @@ php artisan view:cache
 # Run migrations
 php artisan migrate --force
 
-# Run seeders
-php artisan db:seed --force
+# Run seeders only if database is empty
+php artisan db:seed --force 2>/dev/null || echo "Seeding skipped (data already exists)"
 
 # Start Apache
 exec "$@"
