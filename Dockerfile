@@ -28,11 +28,11 @@ WORKDIR /var/www/html
 # Copy existing application directory
 COPY . .
 
-# Install Composer dependencies
+# Install Composer dependencies only
 RUN composer install --no-dev --optimize-autoloader
 
-# Install NPM dependencies and build assets
-RUN npm ci && npm run build
+# Assets are pre-built and committed to the repo
+# No need to run npm install or npm build
 
 # Set proper permissions
 RUN chmod -R 755 /var/www/html/storage \
