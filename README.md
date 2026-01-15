@@ -1,59 +1,303 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Kolektif Space - Meeting Room Booking System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Kolektif Space adalah sistem pemesanan ruang meeting dan kantor berbasis web yang dibangun dengan Laravel 11. Aplikasi ini memungkinkan pengguna untuk menjelajahi, memesan, dan mengelola reservasi ruang kerja secara real-time dengan antarmuka yang modern dan responsif.
 
-## About Laravel
+## Tech Stack
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+| Technology | Description |
+|------------|-------------|
+| **Laravel 11** | PHP Framework |
+| **MySQL** | Database |
+| **Blade** | Template Engine |
+| **Tailwind CSS** | Styling |
+| **Alpine.js** | JavaScript Framework |
+| **Vite** | Build Tool |
+| **Flatpickr** | Date Picker |
+| **SweetAlert2** | Alert/Popup Library |
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Untuk Pengunjung (Guest)
+- 🔍 **Jelajahi Ruangan** - Lihat semua meeting room dan office space yang tersedia
+- 📅 **Booking Tanpa Login** - Pesan ruangan langsung tanpa perlu membuat akun
+- 💳 **Transfer Bank Manual** - Pembayaran via transfer dengan konfirmasi WhatsApp
+- ⏰ **Jam Operasional** - Pembatasan booking hanya pada jam 09:00-22:00
+- 🔔 **Notifikasi Error** - Popup peringatan untuk konflik jadwal atau waktu di luar operasional
 
-## Learning Laravel
+### Untuk Admin
+- 📊 **Dashboard Overview** - Statistik revenue, occupancy, dan guest hari ini
+- ✅ **Kelola Booking** - Approve atau cancel booking dengan satu klik
+- 🔄 **Toggle Space** - Aktifkan/nonaktifkan ruangan
+- 🔍 **Filter Booking** - Filter berdasarkan status dan ruangan
+- ⚡ **Auto-Cancel** - Pembatalan otomatis booking pending setelah 3 jam
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Prasyarat (Prerequisites)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Pastikan software berikut sudah terinstal di komputer Anda:
 
-## Laravel Sponsors
+| Software | Versi Minimum | Link Download |
+|----------|---------------|---------------|
+| PHP | 8.2+ | [php.net](https://php.net) |
+| Composer | 2.0+ | [getcomposer.org](https://getcomposer.org) |
+| Node.js | 18+ | [nodejs.org](https://nodejs.org) |
+| MySQL | 8.0+ | [mysql.com](https://mysql.com) |
+| Git | 2.0+ | [git-scm.com](https://git-scm.com) |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+> **Tip:** Gunakan [Laragon](https://laragon.org) (Windows) atau [Laravel Valet](https://laravel.com/docs/valet) (Mac) untuk setup yang lebih mudah.
 
-### Premium Partners
+## Instalasi dengan Laragon + TablePlus (Recommended untuk Windows)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Tools yang Dibutuhkan
 
-## Contributing
+| Software | Fungsi | Link Download |
+|----------|--------|---------------|
+| **Laragon** | Local Server (PHP, MySQL, Apache) | [laragon.org](https://laragon.org/download/) |
+| **TablePlus** | Database GUI Manager | [tableplus.com](https://tableplus.com/) |
+| **Node.js** | JavaScript Runtime | [nodejs.org](https://nodejs.org) |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Step 1: Install & Setup Laragon
 
-## Code of Conduct
+1. Download dan install **Laragon Full** dari [laragon.org](https://laragon.org/download/)
+2. Buka Laragon → klik **Start All** (akan menjalankan Apache & MySQL)
+3. Laragon secara otomatis menyediakan:
+   - PHP 8.x
+   - MySQL 8.x
+   - Composer
+   - Git
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Step 2: Clone Project ke Laragon
 
-## Security Vulnerabilities
+```bash
+# Buka terminal Laragon (klik kanan icon Laragon → Terminal)
+cd C:\laragon\www
+git clone https://github.com/yoo23-haidar/kolektifspacebooking.git
+cd kolektifspacebooking
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Step 3: Buat Database dengan TablePlus
+
+1. Buka **TablePlus**
+2. Klik **"Create a new connection"** → pilih **MySQL**
+3. Isi koneksi:
+   - **Host**: `127.0.0.1`
+   - **Port**: `3306`
+   - **User**: `root`
+   - **Password**: *(kosongkan)*
+4. Klik **Connect**
+5. Klik kanan di sidebar → **New Database** → Nama: `kolektifspace`
+
+### Step 4: Install Dependencies
+
+```bash
+# Di terminal Laragon (folder project)
+composer install
+npm install
+```
+
+### Step 5: Konfigurasi Environment
+
+```bash
+# Copy file environment
+copy .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+Edit file `.env` untuk koneksi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=kolektifspace
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### Step 6: Jalankan Migrasi & Seeder
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+### Step 7: Jalankan Aplikasi
+
+```bash
+# Terminal 1: Build frontend assets
+npm run dev
+
+# Terminal 2: Jalankan server (atau gunakan Pretty URL Laragon)
+php artisan serve
+```
+
+### Step 8: Akses Aplikasi
+
+| Halaman | URL |
+|---------|-----|
+| Homepage | http://localhost:8000 atau http://kolektifspacebooking.test |
+| Explore Spaces | http://localhost:8000/explore |
+| Admin Panel | http://localhost:8000/admin |
+
+**Login Admin:**
+- Email: `admin@kolektif.com`
+- Password: `password`
+
+> **Tips Laragon:** Aktifkan "Pretty URL" di Laragon untuk akses via `http://kolektifspacebooking.test` tanpa perlu `php artisan serve`
+
+---
+
+## Instalasi Manual (Alternatif)
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/yoo23-haidar/kolektifspacebooking.git
+cd kolektifspacebooking
+```
+
+### 2. Install Dependencies
+
+```bash
+# Install PHP dependencies
+composer install
+
+# Install Node.js dependencies
+npm install
+```
+
+### 3. Konfigurasi Environment
+
+```bash
+# Copy file environment
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+### 4. Setup Database
+
+Buat database baru di MySQL, lalu edit file `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=kolektifspace
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 5. Jalankan Migrasi & Seeder
+
+```bash
+# Jalankan migrasi database
+php artisan migrate
+
+# Isi data dummy (opsional, untuk testing)
+php artisan db:seed
+```
+
+### 6. Build Assets & Jalankan Server
+
+```bash
+# Terminal 1: Build frontend assets
+npm run dev
+
+# Terminal 2: Jalankan server Laravel
+php artisan serve
+```
+
+### 7. Akses Aplikasi
+
+| Halaman | URL |
+|---------|-----|
+| Homepage | http://localhost:8000 |
+| Explore Spaces | http://localhost:8000/explore |
+| Admin Panel | http://localhost:8000/admin |
+
+**Login Admin:**
+- Email: `admin@kolektif.com`
+- Password: `password`
+
+## Screenshots
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+*Halaman utama dengan hero section dan search bar untuk mencari ruangan*
+
+### Explore Page
+![Explore](screenshots/explore.png)
+*Daftar semua ruangan yang tersedia dengan filter berdasarkan tipe*
+
+### Space Detail
+![Space Detail](screenshots/space-detail.png)
+*Detail ruangan dengan informasi lengkap, harga, dan form booking*
+
+### Booking Form
+![Booking Form](screenshots/booking-form.png)
+*Form pemesanan dengan pilihan tanggal, waktu, dan durasi*
+
+### Payment Page
+![Payment](screenshots/payment.png)
+*Halaman pembayaran dengan instruksi transfer bank dan countdown timer*
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+*Dashboard admin dengan statistik revenue, occupancy, dan incoming requests*
+
+### Admin Bookings
+![Admin Bookings](screenshots/admin-bookings.png)
+*Daftar semua booking dengan filter status dan ruangan*
+
+## Struktur Folder Penting
+
+```
+kolektifspacebooking/
+├── app/
+│   ├── Console/Commands/     # AutoCancelBookings command
+│   ├── Http/Controllers/
+│   │   ├── Admin/            # Admin controllers
+│   │   ├── BookingController.php
+│   │   └── SpaceController.php
+│   └── Models/               # Eloquent models
+├── database/
+│   ├── migrations/           # Database schema
+│   └── seeders/              # Dummy data
+├── resources/views/
+│   ├── admin/                # Admin panel views
+│   ├── booking/              # Booking & payment views
+│   ├── layouts/              # Layout templates
+│   └── space/                # Space detail view
+└── routes/
+    └── web.php               # All routes
+```
+
+## Konfigurasi Tambahan
+
+### Auto-Cancel Scheduler (Production)
+
+Tambahkan cron job untuk menjalankan scheduler Laravel:
+
+```bash
+* * * * * cd /path-to-project && php artisan schedule:run >> /dev/null 2>&1
+```
+
+### Build untuk Production
+
+```bash
+npm run build
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Author
+
+Made by [yoo23-haidar](https://github.com/yoo23-haidar)
