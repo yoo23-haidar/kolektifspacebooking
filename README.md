@@ -18,18 +18,18 @@ Kolektif Space adalah sistem pemesanan ruang meeting dan kantor berbasis web yan
 ## Fitur Utama
 
 ### Untuk Pengunjung (Guest)
-- 🔍 **Jelajahi Ruangan** - Lihat semua meeting room dan office space yang tersedia
-- 📅 **Booking Tanpa Login** - Pesan ruangan langsung tanpa perlu membuat akun
-- 💳 **Transfer Bank Manual** - Pembayaran via transfer dengan konfirmasi WhatsApp
-- ⏰ **Jam Operasional** - Pembatasan booking hanya pada jam 09:00-22:00
-- 🔔 **Notifikasi Error** - Popup peringatan untuk konflik jadwal atau waktu di luar operasional
+-  **Jelajahi Ruangan** - Lihat semua meeting room dan office space yang tersedia
+-  **Booking Tanpa Login** - Pesan ruangan langsung tanpa perlu membuat akun
+-  **Transfer Bank Manual** - Pembayaran via transfer dengan konfirmasi WhatsApp
+-  **Jam Operasional** - Pembatasan booking hanya pada jam 09:00-22:00
+-  **Notifikasi Error** - Popup peringatan untuk konflik jadwal atau waktu di luar operasional
 
 ### Untuk Admin
-- 📊 **Dashboard Overview** - Statistik revenue, occupancy, dan guest hari ini
-- ✅ **Kelola Booking** - Approve atau cancel booking dengan satu klik
-- 🔄 **Toggle Space** - Aktifkan/nonaktifkan ruangan
-- 🔍 **Filter Booking** - Filter berdasarkan status dan ruangan
-- ⚡ **Auto-Cancel** - Pembatalan otomatis booking pending setelah 3 jam
+-  **Dashboard Overview** - Statistik revenue, occupancy, dan guest hari ini
+-  **Kelola Booking** - Approve atau cancel booking dengan satu klik
+-  **Toggle Space** - Aktifkan/nonaktifkan ruangan
+-  **Filter Booking** - Filter berdasarkan status dan ruangan
+-  **Auto-Cancel** - Pembatalan otomatis booking pending setelah 3 jam
 
 ## Prasyarat (Prerequisites)
 
