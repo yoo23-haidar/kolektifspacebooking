@@ -261,6 +261,85 @@ _Dashboard admin dengan statistik revenue, occupancy, dan incoming requests_
 ![Admin Bookings](screenshots/admin-bookings.png)
 _Daftar semua booking dengan filter status dan ruangan_
 
+## System Diagrams
+
+Dokumentasi lengkap sistem tersedia di [docs/DIAGRAMS.md](docs/DIAGRAMS.md). Berikut beberapa diagram utama:
+
+### Entity Relationship Diagram (ERD)
+
+```mermaid
+erDiagram
+    USERS {
+        bigint id PK
+        string name
+        string email UK
+        boolean is_admin
+    }
+    
+    SPACES {
+        bigint id PK
+        string name
+        string slug UK
+        string type
+        integer capacity
+        decimal price_hourly
+        decimal price_daily
+        boolean is_active
+    }
+    
+    BOOKINGS {
+        ulid id PK
+        string guest_name
+        string guest_email
+        bigint space_id FK
+        date booking_date
+        enum status
+        enum payment_status
+    }
+    
+    UNAVAILABLE_DATES {
+        bigint id PK
+        bigint space_id FK
+        datetime start_date
+        datetime end_date
+    }
+    
+    SPACES ||--o{ BOOKINGS : "has many"
+    SPACES ||--o{ UNAVAILABLE_DATES : "has many"
+```
+
+### Context Diagram
+
+```mermaid
+flowchart TB
+    Guest["👤 Guest"]
+    Admin["👨‍💼 Admin"]
+    
+    subgraph System["🏢 KolektifSpace"]
+        App["Booking System"]
+    end
+    
+    Guest -->|"Browse, Book, Pay"| App
+    App -->|"Confirmation"| Guest
+    Admin -->|"Manage"| App
+    App -->|"Reports"| Admin
+```
+
+### Booking Flow
+
+```mermaid
+flowchart LR
+    A[Browse] --> B[Select Room]
+    B --> C[Pick Date/Time]
+    C --> D[Fill Info]
+    D --> E[Submit]
+    E --> F[Payment Page]
+    F --> G[Transfer & Confirm via WA]
+```
+
+> 📄 **Lihat diagram lengkap:** [docs/DIAGRAMS.md](docs/DIAGRAMS.md) - Termasuk DFD Level 0/1, Use Case Diagram, dan Flowchart detail.
+
+
 ## Struktur Folder Penting
 
 ```
