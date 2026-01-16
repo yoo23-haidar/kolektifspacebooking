@@ -11,11 +11,11 @@ Diagram konteks menunjukkan hubungan sistem dengan entitas eksternal.
 ```mermaid
 flowchart TB
     subgraph External["External Entities"]
-        Guest["👤 Guest<br/>(Pengunjung)"]
-        Admin["👨‍💼 Admin<br/>(Pengelola)"]
+        Guest["Guest<br/>(Pengunjung)"]
+        Admin["Admin<br/>(Pengelola)"]
     end
     
-    subgraph System["🏢 KolektifSpace System"]
+    subgraph System["KolektifSpace System"]
         App["Sistem Booking<br/>Ruang Kerja"]
     end
     
@@ -259,22 +259,22 @@ Diagram use case menunjukkan fungsionalitas sistem.
 ```mermaid
 flowchart TB
     subgraph Actors
-        Guest["👤 Guest"]
-        Admin["👨‍💼 Admin"]
+        Guest["Guest"]
+        Admin["Admin"]
     end
     
     subgraph "KolektifSpace System"
-        UC1["📋 Lihat Daftar Ruang"]
-        UC2["🔍 Filter Ruang"]
-        UC3["📄 Lihat Detail Ruang"]
-        UC4["📝 Buat Booking"]
-        UC5["💳 Upload Bukti Bayar"]
-        UC6["🔐 Login"]
-        UC7["📊 Lihat Dashboard"]
-        UC8["✅ Approve Booking"]
-        UC9["❌ Cancel Booking"]
-        UC10["🏢 Kelola Ruang"]
-        UC11["📈 Lihat Laporan"]
+        UC1["Lihat Daftar Ruang"]
+        UC2["Filter Ruang"]
+        UC3["Lihat Detail Ruang"]
+        UC4["Buat Booking"]
+        UC5["Upload Bukti Bayar"]
+        UC6["Login"]
+        UC7["Lihat Dashboard"]
+        UC8["Approve Booking"]
+        UC9["Cancel Booking"]
+        UC10["Kelola Ruang"]
+        UC11["Lihat Laporan"]
     end
     
     Guest --> UC1
